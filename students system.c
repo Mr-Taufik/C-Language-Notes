@@ -19,22 +19,22 @@ int main()
 	char studentNames[MAX_STUDENTS][MAX_NAME_LENGTH];
 	int count = 0;
 	printf("****************************************\n");
-	printf("**************Ñ§Éú¹ÜÀíÏµÍ³**************\n");
-	printf("**********0¡¢ÍË³ö                *******\n");
-	printf("**********1¡¢Â¼ÈëÑ§Éú³É¼¨        *******\n");
-	printf("**********2¡¢²é¿´ËùÓĞ¹Ò¿ÆÑ§ÉúĞÅÏ¢*******\n");
-	printf("**********3¡¢²é¿´ËùÓĞÑ§ÉúĞÅÏ¢    *******\n");
-	printf("**********4¡¢ĞŞ¸ÄÑ§ÉúĞÅÏ¢        *******\n");
-	printf("**********5¡¢ÇåÆÁ                *******\n");
+	printf("**************å­¦ç”Ÿç®¡ç†ç³»ç»Ÿ**************\n");
+	printf("**********0ã€é€€å‡º                *******\n");
+	printf("**********1ã€å½•å…¥å­¦ç”Ÿæˆç»©        *******\n");
+	printf("**********2ã€æŸ¥çœ‹æ‰€æœ‰æŒ‚ç§‘å­¦ç”Ÿä¿¡æ¯*******\n");
+	printf("**********3ã€æŸ¥çœ‹æ‰€æœ‰å­¦ç”Ÿä¿¡æ¯    *******\n");
+	printf("**********4ã€ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯        *******\n");
+	printf("**********5ã€æ¸…å±                *******\n");
 	printf("****************************************\n");
 
 
 	do
 	{
-		printf("\nÑ¡ÔñÄãµÄÑ¡Ïî £º ");
+		printf("\né€‰æ‹©ä½ çš„é€‰é¡¹ ï¼š ");
 		if (scanf_s("%d", &choice) != 1)
 		{
-			printf("ÊäÈëÎŞĞ§£¬ÇëÊäÈëÒ»¸öÕûÊı¡£\n");
+			printf("è¾“å…¥æ— æ•ˆï¼Œè¯·è¾“å…¥ä¸€ä¸ªæ•´æ•°ã€‚\n");
 
 			while (getchar() != '\n');
 			continue;
@@ -57,21 +57,21 @@ int main()
 		case 5:
 			system("cls");
 			printf("****************************************\n");
-			printf("**************Ñ§Éú¹ÜÀíÏµÍ³**************\n");
-			printf("**********0¡¢ÍË³ö                *******\n");
-			printf("**********1¡¢Â¼ÈëÑ§Éú³É¼¨        *******\n");
-			printf("**********2¡¢²é¿´ËùÓĞ¹Ò¿ÆÑ§ÉúĞÅÏ¢*******\n");
-			printf("**********3¡¢²é¿´ËùÓĞÑ§ÉúĞÅÏ¢    *******\n");
-			printf("**********4¡¢ĞŞ¸ÄÑ§ÉúĞÅÏ¢        *******\n");
-			printf("**********5¡¢ÇåÆÁ                *******\n");
+			printf("**************å­¦ç”Ÿç®¡ç†ç³»ç»Ÿ**************\n");
+			printf("**********0ã€é€€å‡º                *******\n");
+			printf("**********1ã€å½•å…¥å­¦ç”Ÿæˆç»©        *******\n");
+			printf("**********2ã€æŸ¥çœ‹æ‰€æœ‰æŒ‚ç§‘å­¦ç”Ÿä¿¡æ¯*******\n");
+			printf("**********3ã€æŸ¥çœ‹æ‰€æœ‰å­¦ç”Ÿä¿¡æ¯    *******\n");
+			printf("**********4ã€ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯        *******\n");
+			printf("**********5ã€æ¸…å±                *******\n");
 			printf("****************************************\n");
 			break;
 
 		case 0:
-			printf("ÍË³ö³ÌĞò\n");
+			printf("é€€å‡ºç¨‹åº\n");
 			break;
 		default:
-			printf("ÎŞĞ§µÄÑ¡Ôñ£¬ÇëÖØĞÂÊäÈë¡£\n");
+			printf("æ— æ•ˆçš„é€‰æ‹©ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚\n");
 			break;
 		}
 
@@ -83,18 +83,18 @@ int main()
 int  EnterStudentsInformation(char studentNames[MAX_STUDENTS][MAX_NAME_LENGTH], int studentsarr[MAX_STUDENTS])
 {
 	int count;
-	printf("ÊäÈëµÄÑ§ÉúÊıÁ¿£º ");
+	printf("è¾“å…¥çš„å­¦ç”Ÿæ•°é‡ï¼š ");
 	scanf_s("%d", &count);
 	while (getchar() != '\n');
-	printf("Ñ§ÉúÊıÁ¿Îª%d\nÊäÈëÑ§ÉúĞÕÃû\n", count);
+	printf("å­¦ç”Ÿæ•°é‡ä¸º%d\nè¾“å…¥å­¦ç”Ÿå§“å\n", count);
 	for (int i = 0; i < count; i++)
 	{
 		fgets(studentNames[i], sizeof(studentNames[i]), stdin);
 	}
-	printf("ÊäÈëÑ§Éú³É¼¨£º\n");
+	printf("è¾“å…¥å­¦ç”Ÿæˆç»©ï¼š\n");
 	for (int j = 0; j < count; j++)
 	{
-		printf(" %sµÄ³É¼¨ÊÇ£º", studentNames[j]);
+		printf(" %sçš„æˆç»©æ˜¯ï¼š", studentNames[j]);
 		scanf_s(" %d", &studentsarr[j]);
 	}
 	return count;
@@ -116,22 +116,22 @@ void  FindStudentsInformation(char studentNames[MAX_STUDENTS][MAX_NAME_LENGTH], 
 {
 	for (int i = 0; i < count; i++)
 	{
-		printf("%sµÄ³É¼¨ÊÇ%d\n", studentNames[i], studentsarr[i]);
+		printf("%sçš„æˆç»©æ˜¯%d\n", studentNames[i], studentsarr[i]);
 	}
 }
 void StudentsInformation(char studentNames[MAX_STUDENTS][MAX_NAME_LENGTH], int studentsarr[MAX_STUDENTS])
 {
 	int a;
-	printf("ÏëĞŞ¸ÄµÚ¼¸¸öÑ§ÉúµÄĞÅÏ¢£¿\n");
+	printf("æƒ³ä¿®æ”¹ç¬¬å‡ ä¸ªå­¦ç”Ÿçš„ä¿¡æ¯ï¼Ÿ\n");
 	scanf_s("%d", &a);
 	while (getchar() != '\n');
-	printf("µÚ %d ¸öÑ§ÉúµÄĞÅÏ¢ ĞÕÃû: %s, ³É¼¨: %d\n", a, studentNames[a - 1], studentsarr[a - 1]);
-	printf("ÊäÈëĞÂÃû×Ö£º\n");
+	printf("ç¬¬ %d ä¸ªå­¦ç”Ÿçš„ä¿¡æ¯ å§“å: %s, æˆç»©: %d\n", a, studentNames[a - 1], studentsarr[a - 1]);
+	printf("è¾“å…¥æ–°åå­—ï¼š\n");
 	fgets(studentNames[a - 1], MAX_NAME_LENGTH, stdin);
-	printf("ÊäÈëĞÂ·ÖÊı£º\n");
+	printf("è¾“å…¥æ–°åˆ†æ•°ï¼š\n");
 	scanf_s("%d", &studentsarr[a - 1]);
 	while (getchar() != '\n'); 
-	printf("ĞÂµÚ%d¸öÑ§ÉúµÄĞÅÏ¢ÊÇ %s , %d\n", a, studentNames[a - 1], studentsarr[a - 1]);
+	printf("æ–°ç¬¬%dä¸ªå­¦ç”Ÿçš„ä¿¡æ¯æ˜¯ %s , %d\n", a, studentNames[a - 1], studentsarr[a - 1]);
 }
 
 
