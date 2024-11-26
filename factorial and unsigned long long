@@ -1,4 +1,11 @@
+
 这是一个计算阶乘的代码
+阶乘函数fact
+* 
+* unsigned long long fact(int n); 
+声明了一个名为 fact 的函数，它接受一个整数参数 n，
+并返回一个无符号长长整数（unsigned long long），
+以便处理较大的阶乘结果
 
 #include <stdio.h>
 
