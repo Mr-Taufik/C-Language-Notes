@@ -1,3 +1,6 @@
+æŸ¥æ‰¾æ•°å­—
+
+
 #include <stdio.h>
 
 int main() {
@@ -7,20 +10,20 @@ int main() {
 	int index = 0;
 	int found = 0;
 
-	printf("ÇëÊäÈëÒª²éÕÒµÄÊı×Ö£º ");
+	printf("è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„æ•°å­—ï¼š ");
 	scanf_s("%d", &target);
 
-	while (index < size) { // Ñ­»·±éÀúÊı×é
+	while (index < size) { // å¾ªç¯éå†æ•°ç»„
 		if (array[index] == target) {
-			printf("Êı×Ö %d ÔÚÊı×éÖĞµÄÎ»ÖÃÊÇ %d£¨Ë÷Òı´Ó0¿ªÊ¼£©¡£\n", target, index);
+			printf("æ•°å­— %d åœ¨æ•°ç»„ä¸­çš„ä½ç½®æ˜¯ %dï¼ˆç´¢å¼•ä»0å¼€å§‹ï¼‰ã€‚\n", target, index);
 			found = 1;
-			break; // ÕÒµ½ºóÍË³öÑ­»·
+			break; // æ‰¾åˆ°åé€€å‡ºå¾ªç¯
 		}
 		index++;
 	}
 
 	if (!found) {
-		printf("Êı×Ö %d ²»ÔÚÊı×éÖĞ¡£\n", target);
+		printf("æ•°å­— %d ä¸åœ¨æ•°ç»„ä¸­ã€‚\n", target);
 	}
 
 	return 0;
