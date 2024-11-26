@@ -52,11 +52,11 @@ int main()
 		printf("Do it again? Y/y : YES, else : NO ");
 		scanf(" %c", &playAgain);
 
-		// 清理输入缓冲区，以防用户输入了多余的字符
+		// 娓呯悊杈撳叆缂撳啿鍖猴紝浠ラ槻鐢ㄦ埛杈撳叆浜嗗浣欑殑瀛楃
 		while (getchar() != '\n' && !feof(stdin));
 		
 	}
-	printf("Thanks for you play goobye！\n");
+	printf("Thanks for you play goobye锛乗n");
 	return 0;
 }
 
