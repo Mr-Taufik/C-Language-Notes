@@ -1,3 +1,7 @@
+使用sizeof计算需要循环的次数
+计算average的时候，由于都是整数，所以需要改变类型
+改为float
+
 #include <stdio.h>
 
 int main()
