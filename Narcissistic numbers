@@ -1,0 +1,65 @@
+这个代码可用用来计算3到7位数的水仙花数字
+输入位数然后会自动计算
+
+
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int n;
+	int a, b;
+	printf("输入一个整数n 3<=n<=7: ");
+	scanf_s("%d", &n);
+////这里比较蠢是手动固定了循环的范围，为下面循环做了准备
+	switch (n)
+	{
+	case 3:
+		a = 100;
+		b = 999;
+		break;
+	case 4:
+		a = 1000;
+		b = 9999;
+		break;
+	case 5 :
+		a = 10000;
+		b = 99999;
+		break;
+	case 6 :
+		a = 100000;
+		b = 999999;
+		break;
+	case 7:
+		a = 1000000;
+		b = 9999999;
+		break;
+	}
+
+	int arr[8];
+	////创立一个数组用来储存水仙花数的每一位数字
+
+	for (int i = a; i <= b; i++)
+	{
+		int temp = i;
+		////这行的意思是让下一个for循环的数字等于我们需要判断的水仙花数字
+		
+		for (int j = 0; j < n; j++)
+		{
+			arr[j] = temp % 10;///这里是用来余数计算需要求的数字里面的每一位数字，用数组来储存
+			temp = temp / 10;
+		}
+		int sum = 0;
+		for (int z = 0; z < n; z++)
+		{
+			sum += pow(arr[z], n);////这里是用来计算的，计算每一位数字的对应的次方和
+		}
+		if (sum == i)//这里是用来判断是否为水仙花的
+		{
+			printf("%d是水仙花数\n", i)；
+		}
+		
+	}
+
+	return 0;
+}
