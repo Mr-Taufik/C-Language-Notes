@@ -3,20 +3,20 @@
 
 int isPrime(int num) {
 	if (num < 2)
-		return 0; // 0 ºÍ 1 ²»ÊÇËØÊı
+		return 0; // 0 å’Œ 1 ä¸æ˜¯ç´ æ•°
 	int max_divisor = (int)sqrt((double)num);
 	for (int i = 2; i <= max_divisor; i++) {
 		if (num % i == 0)
-			return 0; // ÕÒµ½Òò×Ó£¬·ÇËØÊı
+			return 0; // æ‰¾åˆ°å› å­ï¼Œéç´ æ•°
 	}
-	return 1; // ÎŞÒò×Ó£¬ËØÊı
-	///È·±£Ö»ÓĞÔÚËùÓĞ¿ÉÄÜµÄj¶¼²»Õû³ıiÊ±£¬²Å½«iÅĞ¶¨ÎªËØÊı
+	return 1; // æ— å› å­ï¼Œç´ æ•°
+	///ç¡®ä¿åªæœ‰åœ¨æ‰€æœ‰å¯èƒ½çš„jéƒ½ä¸æ•´é™¤iæ—¶ï¼Œæ‰å°†iåˆ¤å®šä¸ºç´ æ•°
 }
 
 int main()
 {
 	int count = 0;
-	printf("´òÓ¡200 - 300 Ö®¼äµÄËØÊı\n");
+	printf("æ‰“å°200 - 300 ä¹‹é—´çš„ç´ æ•°\n");
 
 	for (int i = 200; i <= 300; i++)
 	{
@@ -27,6 +27,6 @@ int main()
 		}
 	}
 
-	printf("\nËØÊıµÄ×ÜÊıÁ¿: %d\n", count);
+	printf("\nç´ æ•°çš„æ€»æ•°é‡: %d\n", count);
 	return 0;
 }
