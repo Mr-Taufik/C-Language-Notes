@@ -70,4 +70,20 @@ double calculateSeries(double x, double threshold, int* termCount) {
 //减少函数调用： 通过递推减少了对复杂数学函数的调用，提高了程序的执行效率
 //使用 double 类型可以保证较高的计算精度，尤其是在处理较大的 x 值或需要高精度的计算时
 //设定合理的终止条件 threshold(阈值) = 0.00001，确保在达到所需精度时程序停止运行，避免不必要的计算。
+////////
+/*int *termCount 的角色
+在你提供的代码示例中，int *termCount 是一个指向整数的指针，
+用于在函数内部记录和传递“使用了多少项”这一信息到调用函数。
+calculateSeries 函数接收三个参数：
+double x: 级数的基数。
+double threshold: 终止条件的阈值。
+int *termCount: 一个指向整数的指针，用于记录和传递使用的项数。
+使用 &termCount 将其地址传递给 calculateSeries 函数，使得该函数可以修改 termCount 的值。
+*termCount = n - 1; // 已添加的项数
+*termCount 表示指针所指向的地址处存储的值（即 main 函数中的 termCount）。
+通过赋值操作，calculateSeries 函数将计算过程中使用的项数传递回 main 函数
+为什么使用指针而不是返回值？
+额外结果通过指针参数传递： int *termCount 允许函数修改 main 中的 termCount 变量
 
+C语言中的函数参数是按值传递的。这意味着，当你传递一个变量给函数时，函数会接收到该变量的一个拷贝。
+对于基本类型（如 int, double），这通常足够。但是，如果你想要在函数内部修改外部变量的值，就需要使用指针（即传址）
