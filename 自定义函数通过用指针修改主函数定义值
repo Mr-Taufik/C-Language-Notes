@@ -1,39 +1,39 @@
 #include <stdio.h>
 
-// º¯ÊıÉùÃ÷£ºÍ¨¹ıÖ¸ÕëĞŞ¸Ä±äÁ¿µÄÖµ
+// å‡½æ•°å£°æ˜ï¼šé€šè¿‡æŒ‡é’ˆä¿®æ”¹å˜é‡çš„å€¼
 void increment(int* num);
 
 int main() {
 	int a = 5;
-	printf("º¯Êıµ÷ÓÃÇ°£¬a = %d\n", a); // Êä³ö£º5
+	printf("å‡½æ•°è°ƒç”¨å‰ï¼Œa = %d\n", a); // è¾“å‡ºï¼š5
 
-	increment(&a); // ´«µİaµÄµØÖ·
+	increment(&a); // ä¼ é€’açš„åœ°å€
 
-	printf("º¯Êıµ÷ÓÃºó£¬a = %d\n", a); // Êä³ö£º6
+	printf("å‡½æ•°è°ƒç”¨åï¼Œa = %d\n", a); // è¾“å‡ºï¼š6
 
 	return 0;
 }
 
 void increment(int* num) {
-	(*num)++; // Í¨¹ıÖ¸ÕëĞŞ¸Ä±äÁ¿µÄÖµ
+	(*num)++; // é€šè¿‡æŒ‡é’ˆä¿®æ”¹å˜é‡çš„å€¼
 }
 
 
 ////////////////
 #include <stdio.h>
 
-// º¯ÊıÉùÃ÷£º½»»»Á½¸öÕûÊı
+// å‡½æ•°å£°æ˜ï¼šäº¤æ¢ä¸¤ä¸ªæ•´æ•°
 void swap(int* a, int* b);
 
 int main() {
 	int x = 10;
 	int y = 20;
 
-	printf("½»»»Ç°: x = %d, y = %d\n", x, y); // Êä³ö£º10, 20
+	printf("äº¤æ¢å‰: x = %d, y = %d\n", x, y); // è¾“å‡ºï¼š10, 20
 
-	swap(&x, &y); // ´«µİxºÍyµÄµØÖ·
+	swap(&x, &y); // ä¼ é€’xå’Œyçš„åœ°å€
 
-	printf("½»»»ºó: x = %d, y = %d\n", x, y); // Êä³ö£º20, 10
+	printf("äº¤æ¢å: x = %d, y = %d\n", x, y); // è¾“å‡ºï¼š20, 10
 
 	return 0;
 }
@@ -46,19 +46,19 @@ void swap(int* a, int* b) {
 /////////////////////
 #include <stdio.h>
 
-// º¯ÊıÉùÃ÷£º¼ÆËãºÍÓë²î
+// å‡½æ•°å£°æ˜ï¼šè®¡ç®—å’Œä¸å·®
 void calculate(int a, int b, int* sum, int* diff);
 
 int main() {
 	int num1, num2;
 	int sum, difference;
 
-	printf("ÇëÊäÈëÁ½¸öÕûÊı: ");
+	printf("è¯·è¾“å…¥ä¸¤ä¸ªæ•´æ•°: ");
 	scanf("%d %d", &num1, &num2);
 
 	calculate(num1, num2, &sum, &difference);
 
-	printf("ºÍ = %d, ²î = %d\n", sum, difference);
+	printf("å’Œ = %d, å·® = %d\n", sum, difference);
 
 	return 0;
 }
