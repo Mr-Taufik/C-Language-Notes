@@ -63,3 +63,74 @@ int main()
 
 	return 0;
 }
+
+//////////////
+/////水仙花数
+/////
+/*
+#include <stdio.h>
+#include <math.h>
+
+// 函数：计算数字的位数
+int countDigits(int number);
+
+// 函数：计算一个数的水仙花数之和
+int calculateSumOfPowers(int number, int power);
+	
+
+int main() {
+	int lower, upper;
+
+	printf("请输入检查水仙花数的范围。\n");
+	printf("最低数字：");
+	if (scanf("%d", &lower) != 1 || lower < 0) {
+		printf("输入无效，请输入一个非负整数。\n");
+		return 1;
+	}
+
+	printf("最高数字：");
+	if (scanf("%d", &upper) != 1 || upper < lower) {
+		printf("输入无效，请输入一个大于或等于最低数字的整数。\n");
+		return 1;
+	}
+
+	printf("范围 [%d, %d] 内的水仙花数有：\n", lower, upper);
+	int found = 0;
+	for (int number = lower; number <= upper; number++) {
+		int digits = countDigits(number);
+		int sum = calculateSumOfPowers(number, digits);
+		if (sum == number) {
+			printf("%d\n", number);
+			found = 1;
+		}
+	}
+
+	if (!found) {
+		printf("在范围 [%d, %d] 内没有找到水仙花数。\n", lower, upper);
+	}
+
+	return 0;
+}
+
+int countDigits(int number)
+{
+	if (number == 0)
+		return 1;
+	int count = 0;
+	while (number != 0) {
+		number /= 10;
+		count++;
+	}
+	return count;
+}
+int calculateSumOfPowers(int number, int power) 
+{
+	int sum = 0;
+	int temp = number;
+	while (temp != 0) {
+		int digit = temp % 10;
+		sum += pow(digit, power);
+		temp /= 10;
+	}
+	return sum;
+}
