@@ -65,3 +65,9 @@ double calculateSeries(double x, double threshold, int* termCount) {
 	*termCount = n - 1; // 已添加的项数
 	return sum;
 }
+///计算ex的泰勒级数
+//避免重复计算阶乘： 使用递推公式可以逐步计算每一项，无需重新计算阶乘。
+//减少函数调用： 通过递推减少了对复杂数学函数的调用，提高了程序的执行效率
+//使用 double 类型可以保证较高的计算精度，尤其是在处理较大的 x 值或需要高精度的计算时
+//设定合理的终止条件 threshold(阈值) = 0.00001，确保在达到所需精度时程序停止运行，避免不必要的计算。
+
