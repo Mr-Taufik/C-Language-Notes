@@ -1,6 +1,9 @@
+è¿™åº•ä¸‹æ˜¯ä¸¤ä¸ªä¸åŒçš„æŸ¥æ‰¾æœ€å°å€¼çš„ä»£ç ï¼Œåˆ†åˆ«éƒ½ç”¨äº†æŒ‡é’ˆåœ¨void
+è‡ªå®šä¹‰å‡½æ•°é‡Œé¢å®ç°
+
 #include <stdio.h>
 
-// º¯ÊıÉùÃ÷
+// å‡½æ•°å£°æ˜
 void findMaxMin(int arr[], int size, int* max, int* min);
 
 int main()
@@ -8,24 +11,24 @@ int main()
     int arr[10];
     int max, min;
 
-    printf("ÊäÈë10¸öÊı×Ö£º\n");
+    printf("è¾“å…¥10ä¸ªæ•°å­—ï¼š\n");
 
-    // ÊäÈë10¸öÊı×Ö
+    // è¾“å…¥10ä¸ªæ•°å­—
     for (int i = 0; i < 10; i++)
     {
         if (scanf_s("%d", &arr[i]) != 1) {
-            printf("ÊäÈë´íÎó¡£\n");
+            printf("è¾“å…¥é”™è¯¯ã€‚\n");
             return 1;
         }
     }
 
     int size = sizeof(arr) / sizeof(arr[0]);
 
-    // ³õÊ¼»¯ max ºÍ min ÎªµÚÒ»¸öÔªËØ
+    // åˆå§‹åŒ– max å’Œ min ä¸ºç¬¬ä¸€ä¸ªå…ƒç´ 
     max = arr[0];
     min = arr[0];
 
-    // µ÷ÓÃº¯Êı²éÕÒ×î´óÖµºÍ×îĞ¡Öµ
+    // è°ƒç”¨å‡½æ•°æŸ¥æ‰¾æœ€å¤§å€¼å’Œæœ€å°å€¼
     findMaxMin(arr, size, &max, &min);
 
     printf("The Max number is %d, Min number is %d\n", max, min);
@@ -34,7 +37,7 @@ int main()
 
 void findMaxMin(int arr[], int size, int* max, int* min)
 {
-    for (int i = 1; i < size; i++)  // ´ÓµÚ¶ş¸öÔªËØ¿ªÊ¼
+    for (int i = 1; i < size; i++)  // ä»ç¬¬äºŒä¸ªå…ƒç´ å¼€å§‹
     {
         if (arr[i] > *max)
         {
@@ -53,7 +56,7 @@ void findMaxMin(int arr[], int size, int* max, int* min)
 
 #include <stdio.h>
 
-// º¯ÊıÉùÃ÷£º²éÕÒ×î´óÖµºÍ×îĞ¡Öµ
+// å‡½æ•°å£°æ˜ï¼šæŸ¥æ‰¾æœ€å¤§å€¼å’Œæœ€å°å€¼
 void findMaxMin(int arr[], int size, int* max, int* min);
 
 int main() {
@@ -63,7 +66,7 @@ int main() {
 
     findMaxMin(numbers, size, &maximum, &minimum);
 
-    printf("×î´óÖµ = %d, ×îĞ¡Öµ = %d\n", maximum, minimum);
+    printf("æœ€å¤§å€¼ = %d, æœ€å°å€¼ = %d\n", maximum, minimum);
 
     return 0;
 }
