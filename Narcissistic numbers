@@ -134,3 +134,43 @@ int calculateSumOfPowers(int number, int power)
 	}
 	return sum;
 }
+
+另外一种方法
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int n = 100;
+	while (n < 9999999)
+	{
+		int count = 0;
+		int sum = 0;
+		//scanf_s("%d", &n);
+		int a = 1;
+		while (1)
+		{
+			if (n / a == 0)
+				break;
+			a *= 10;
+			count++;
+		}
+		int n1 = n;
+		for (int i = 0; i < count; i++)
+		{
+			int cur = n1 % 10;
+			sum += pow(cur, count);
+			n1 /= 10;
+		}
+
+		if (sum == n)
+			printf("水仙花 %d\n",sum);
+
+		n++;
+	}
+
+	return 0;
+}
+
+
+
