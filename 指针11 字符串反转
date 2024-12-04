@@ -1,4 +1,4 @@
-//·´×ª×Ö·û´®
+//åè½¬å­—ç¬¦ä¸²
 /*
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,23 +7,23 @@
 
 int main()
 {
-    // ÎªÃ¿¸ö×Ö·û´®Ö¸Õë·ÖÅäÄÚ´æ
+    // ä¸ºæ¯ä¸ªå­—ç¬¦ä¸²æŒ‡é’ˆåˆ†é…å†…å­˜
     char* str[SIZE] = { 0 };
 
-    // ÊäÈë×Ö·û´®
+    // è¾“å…¥å­—ç¬¦ä¸²
     for (int i = 0; i < SIZE; i++)
     {
-        str[i] = (char*)malloc(sizeof(char) * 128); // ÎªÃ¿¸ö×Ö·û´®·ÖÅä¿Õ¼ä
+        str[i] = (char*)malloc(sizeof(char) * 128); // ä¸ºæ¯ä¸ªå­—ç¬¦ä¸²åˆ†é…ç©ºé—´
         if (str[i] == NULL) {
             printf("Memory allocation failed!\n");
-            return 1; // Èç¹ûÄÚ´æ·ÖÅäÊ§°Ü£¬ÍË³ö³ÌĞò
+            return 1; // å¦‚æœå†…å­˜åˆ†é…å¤±è´¥ï¼Œé€€å‡ºç¨‹åº
         }
         scanf_s("%s", str[i], 128);
-        // Ê¹ÓÃ %s ¶ÁÈ¡×Ö·û´®£¬×¢ÒâÏŞÖÆ³¤¶È
+        // ä½¿ç”¨ %s è¯»å–å­—ç¬¦ä¸²ï¼Œæ³¨æ„é™åˆ¶é•¿åº¦
         
     }
 
-    // ½»»»×Ö·û´®
+    // äº¤æ¢å­—ç¬¦ä¸²
     char* t;
     for (int i = 0; i < SIZE / 2; i++)
     {
@@ -32,13 +32,13 @@ int main()
         str[SIZE - 1 - i] = t;
     }
 
-    // Êä³ö×Ö·û´®
+    // è¾“å‡ºå­—ç¬¦ä¸²
     for (int i = 0; i < SIZE; i++)
     {
         printf("%s ", str[i]);
     }
 
-    // ÊÍ·Å·ÖÅäµÄÄÚ´æ
+    // é‡Šæ”¾åˆ†é…çš„å†…å­˜
     for (int i = 0; i < SIZE; i++)
     {
         free(str[i]);
@@ -48,7 +48,7 @@ int main()
 }
 */
 
-//×Ö·û´®µ¥´ÊÄæĞò
+//å­—ç¬¦ä¸²å•è¯é€†åº
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -68,7 +68,7 @@ void reverse(char* begin, char* end)
 int main()
 {
     char* str = (char*)malloc(sizeof(char) * 128);
-    if (str == NULL) {  // ¼ì²éÄÚ´æ·ÖÅäÊÇ·ñ³É¹¦
+    if (str == NULL) {  // æ£€æŸ¥å†…å­˜åˆ†é…æ˜¯å¦æˆåŠŸ
         printf("Memory allocation failed!\n");
         return 1;
     }
@@ -76,35 +76,35 @@ int main()
     int i = 0;
     char ch;
 
-    // ÊäÈëÖ±µ½»»ĞĞ·û
+    // è¾“å…¥ç›´åˆ°æ¢è¡Œç¬¦
     while ((ch = getchar()) != '\n') {
         str[i++] = ch;
     }
 
-    str[i] = '\0';  // ×Ö·û´®Ä©Î²Ìí¼Ó½áÊø·û
+    str[i] = '\0';  // å­—ç¬¦ä¸²æœ«å°¾æ·»åŠ ç»“æŸç¬¦
 
-    // ·´×ªÕû¸ö×Ö·û´®
+    // åè½¬æ•´ä¸ªå­—ç¬¦ä¸²
     reverse(str, str + i - 1);
 
     char* begin = str;
     char* end = str;
 
-    // ±éÀú×Ö·û´®²¢·´×ªÃ¿¸öµ¥´Ê
+    // éå†å­—ç¬¦ä¸²å¹¶åè½¬æ¯ä¸ªå•è¯
     while (*end != '\0') {
         if (*end == ' ') {
-            reverse(begin, end - 1);  // ·´×ªÃ¿¸öµ¥´Ê
-            begin = end + 1;  // ÖØĞÂ¶¨Î»µ¥´ÊµÄ¿ªÊ¼
+            reverse(begin, end - 1);  // åè½¬æ¯ä¸ªå•è¯
+            begin = end + 1;  // é‡æ–°å®šä½å•è¯çš„å¼€å§‹
         }
         end++;
     }
 
-    // ×îºóÒ»¸öµ¥´ÊµÄ·´×ª
+    // æœ€åä¸€ä¸ªå•è¯çš„åè½¬
     reverse(begin, end - 1);
 
-    // Êä³ö·´×ªºóµÄ×Ö·û´®
+    // è¾“å‡ºåè½¬åçš„å­—ç¬¦ä¸²
     printf("%s\n", str);
 
-    // ÊÍ·ÅÄÚ´æ
+    // é‡Šæ”¾å†…å­˜
     free(str);
 
     return 0;
