@@ -44,5 +44,31 @@ int main()
 typedef int (*FuncPtr)(int, int);
 FuncPtr q = add;
 
+#include <stdio.h>
 
+
+typedef int(*T)(int, int);
+
+int add(int x, int y)
+{
+	return x + y;
+}
+
+int subtract(int x, int y)
+{
+	return x - y;
+}
+
+int main()
+{
+	int a = 5;
+	int b = 10;
+	T q1 = add;
+	T q2 = subtract;
+
+
+	printf("%d", q1(a, b));
+
+	return 0;
+}
 
