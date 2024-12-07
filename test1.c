@@ -22,22 +22,22 @@ int main()
 	int choice;
 	int x = 0;
 	int y = 0;
-	printf("Ñ¡ÔñÄãµÄÑ¡Ïî\n");
+	printf("é€‰æ‹©ä½ çš„é€‰é¡¹\n");
 
-	printf("1.¼Ó¼õ·¨\t2.³Ë³ı·¨\t3.¿ª¸ùºÅ\n4.Ãİ´Î·½\t5.½×³Ë\n");
+	printf("1.åŠ å‡æ³•\t2.ä¹˜é™¤æ³•\t3.å¼€æ ¹å·\n4.å¹‚æ¬¡æ–¹\t5.é˜¶ä¹˜\n");
 
 	scanf_s("%d", &choice);
 
-	Function q1 = Add;           //¼Ó·¨
-	Function q2 = Subtra;        //¼õ·¨
-	Function q3 = Mul;           //³Ë·¨
-	Function q4 = Div;           //³ı·¨
-	Function q5 = Sqrt;          //¿ªÆ½·½¸ú
-	Function q6 = Pow;           //Ãİ´Î·½
-	Function q7 = Factorial;     //½×³Ë
+	Function q1 = Add;           //åŠ æ³•
+	Function q2 = Subtra;        //å‡æ³•
+	Function q3 = Mul;           //ä¹˜æ³•
+	Function q4 = Div;           //é™¤æ³•
+	Function q5 = Sqrt;          //å¼€å¹³æ–¹è·Ÿ
+	Function q6 = Pow;           //å¹‚æ¬¡æ–¹
+	Function q7 = Factorial;     //é˜¶ä¹˜
 
 	Case choice1 = f1;
-    Case choice2 = f2;
+        Case choice2 = f2;
 
 	
 	switch (choice)
@@ -54,18 +54,18 @@ int main()
 		break;
 	case 3:
 		
-		printf("ÊäÈë¿ª·½Êıx ");
+		printf("è¾“å…¥å¼€æ–¹æ•°x ");
 		scanf_s("%d", &x);
-		printf("ÊäÈëµÚ¶ş¸öÊı×Öy (ÎŞĞ§Êı×Ö)");
+		printf("è¾“å…¥ç¬¬äºŒä¸ªæ•°å­—y (æ— æ•ˆæ•°å­—)");
 		scanf_s("%d", &y);
 
 		Sqrt(x, y);
 
 		break;
 	case 4:
-		printf("ÊäÈëµ×Êıx ");
+		printf("è¾“å…¥åº•æ•°x ");
 		scanf_s("%d", &x);
-		printf("ÊäÈëÃİ´Î·½y ");
+		printf("è¾“å…¥å¹‚æ¬¡æ–¹y ");
 		scanf_s("%d", &y);
 
 		Pow(x, y);
@@ -73,9 +73,9 @@ int main()
 		
 		break;
 	case 5:
-		printf("ÊäÈëĞèÒª½×³ËµÄÊı×Öx ");
+		printf("è¾“å…¥éœ€è¦é˜¶ä¹˜çš„æ•°å­—x ");
 		scanf_s("%d", &x);
-		printf("ÊäÈëĞèÒª½×³ËµÄÏîy ");
+		printf("è¾“å…¥éœ€è¦é˜¶ä¹˜çš„é¡¹y ");
 		scanf_s("%d", &y);
 
 		Factorial(x, y);
@@ -83,11 +83,11 @@ int main()
 		
 		break;
 	default:
-		printf("ÊäÈëÎŞĞ§£¡\n");
+		printf("è¾“å…¥æ— æ•ˆï¼\n");
 		break;
 	}
 
-	//printf("1.¼Ó¼õ·¨\t2.³Ë³ı·¨\t3.¿ª¸ùºÅ\n\t4.Ãİ´Î·½\t5.½×³Ë\n");
+	//printf("1.åŠ å‡æ³•\t2.ä¹˜é™¤æ³•\t3.å¼€æ ¹å·\n\t4.å¹‚æ¬¡æ–¹\t5.é˜¶ä¹˜\n");
 
 
 	return 0;
@@ -97,18 +97,18 @@ void f1()
 {
 	int choice;
 	int x, y;
-	printf("¼Ó·¨ÊäÈë1 ¼õ·¨ÊäÈë2\n");
+	printf("åŠ æ³•è¾“å…¥1 å‡æ³•è¾“å…¥2\n");
 	scanf_s("%d", &choice);
 	if (choice == 1)
 	{
-		printf("ÊäÈëÁ½¸öÊı×Öx y\n");
+		printf("è¾“å…¥ä¸¤ä¸ªæ•°å­—x y\n");
 		scanf_s("%d", &x);
 		scanf_s("%d", &y);
 		Add(x, y);
 	}
 	else if (choice == 2)
 	{
-		printf("ÊäÈëÁ½¸öÊı×Öx y\n");
+		printf("è¾“å…¥ä¸¤ä¸ªæ•°å­—x y\n");
 		scanf_s("%d", &x);
 		scanf_s("%d", &y);
 		Subtra(x, y);
@@ -118,18 +118,18 @@ void f2()
 {
 	int choice;
 	int x, y;
-	printf("³Ë·¨ÊäÈë1 ³ı·¨ÊäÈë2\n");
+	printf("ä¹˜æ³•è¾“å…¥1 é™¤æ³•è¾“å…¥2\n");
 	scanf_s("%d", &choice);
 	if (choice == 1)
 	{
-		printf("ÊäÈëÁ½¸öÊı×Öx y\n");
+		printf("è¾“å…¥ä¸¤ä¸ªæ•°å­—x y\n");
 		scanf_s("%d", &x);
 		scanf_s("%d", &y);
 		Add(x, y);
 	}
 	else if (choice == 2)
 	{
-		printf("ÊäÈëÁ½¸öÊı×Öx y\n");
+		printf("è¾“å…¥ä¸¤ä¸ªæ•°å­—x y\n");
 		scanf_s("%d", &x);
 		scanf_s("%d", &y);
 		Subtra(x, y);
@@ -138,32 +138,32 @@ void f2()
 
 void Add(int x, int y)
 {
-	printf("\n%dºÍ%dµÄºÍÊÇ%d", x, y, x + y);
+	printf("\n%då’Œ%dçš„å’Œæ˜¯%d", x, y, x + y);
 }
 void Subtra(int x, int y)
 {
-	printf("\n%d¼õÈ¥%dµÈÓÚ%d", x, y, x - y);
+	printf("\n%då‡å»%dç­‰äº%d", x, y, x - y);
 }
 void Mul(int x, int y)
 {
-	printf("\n%d³ËÓÚ%dµÈÓÚ%d", x, y, x*y);
+	printf("\n%dä¹˜äº%dç­‰äº%d", x, y, x*y);
 }
 void Div(int x, int y)
 {
-	printf("\n%d³ıÓÚ%dµÈÓÚ%d", x, y, x/y);
+	printf("\n%dé™¤äº%dç­‰äº%d", x, y, x/y);
 }
 
 void Sqrt(int x, int y)
 {
 	
 	double result = sqrt((double)x);
-	printf("ÄãÊäÈëµÄÊı×ÖµÄÆ½·½¸ùÊÇ%.4lf", result);
+	printf("ä½ è¾“å…¥çš„æ•°å­—çš„å¹³æ–¹æ ¹æ˜¯%.4lf", result);
 }
 
 void Pow(int x, int y)
 {
 	int result = (int)pow((double)x, (double)y);
-	printf("ÄãÊäÈëµÄµ×Êı%dµÄ%d´Î·½µÄ´ğ°¸ÊÇ%d", x, y, result);
+	printf("ä½ è¾“å…¥çš„åº•æ•°%dçš„%dæ¬¡æ–¹çš„ç­”æ¡ˆæ˜¯%d", x, y, result);
 }
 
 void Factorial(int x, int y)
@@ -176,7 +176,7 @@ void Factorial(int x, int y)
 		sum *= x;
 		x--;
 	}
-	printf("ÄãÊäÈëµÄÊı×ÖµÄ%dÏî½×³Ë½á¹ûÊÇ%u", y, sum);
+	printf("ä½ è¾“å…¥çš„æ•°å­—çš„%dé¡¹é˜¶ä¹˜ç»“æœæ˜¯%u", y, sum);
 
 }
 
