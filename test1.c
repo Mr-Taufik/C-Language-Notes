@@ -1,3 +1,7 @@
+这是一个简易计算器，具有一些简单的操作；
+
+
+
 #include <stdio.h>
 #include <math.h>
 
