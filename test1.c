@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <math.h>
 
-typedef void(*Function)(int, int);
 typedef void(*Case)();
 
 void f1();
@@ -24,74 +23,77 @@ void Factorial(int x, int y);
 int main()
 {
 	int choice;
+	int check = 1;
 	int x = 0;
 	int y = 0;
-	printf("选择你的选项\n");
-
-	printf("1.加减法\t2.乘除法\t3.开根号\n4.幂次方\t5.阶乘\n");
-
-	scanf_s("%d", &choice);
-
-	Function q1 = Add;           //加法
-	Function q2 = Subtra;        //减法
-	Function q3 = Mul;           //乘法
-	Function q4 = Div;           //除法
-	Function q5 = Sqrt;          //开平方跟
-	Function q6 = Pow;           //幂次方
-	Function q7 = Factorial;     //阶乘
-
-	Case choice1 = f1;
-        Case choice2 = f2;
-
-	
-	switch (choice)
+	while (check == 1)
 	{
-	case 1:
+		printf("选择你的选项\n");
+		printf("1.加减法\t2.乘除法\t3.开根号\n4.幂次方\t5.阶乘\n");
+		scanf_s("%d", &choice);
 
-		f1();
+		switch (choice)
+		{
+		case 1:
 
-		break;
-	case 2:
+			f1();
 
-		f2();
+			break;
+		case 2:
 
-		break;
-	case 3:
-		
-		printf("输入开方数x ");
-		scanf_s("%d", &x);
-		printf("输入第二个数字y (无效数字)");
-		scanf_s("%d", &y);
+			f2();
 
-		Sqrt(x, y);
+			break;
+		case 3:
 
-		break;
-	case 4:
-		printf("输入底数x ");
-		scanf_s("%d", &x);
-		printf("输入幂次方y ");
-		scanf_s("%d", &y);
+			printf("输入开方数x ");
+			scanf_s("%d", &x);
+			printf("输入第二个数字y (无效数字)");
+			scanf_s("%d", &y);
 
-		Pow(x, y);
+			Sqrt(x, y);
 
-		
-		break;
-	case 5:
-		printf("输入需要阶乘的数字x ");
-		scanf_s("%d", &x);
-		printf("输入需要阶乘的项y ");
-		scanf_s("%d", &y);
+			break;
+		case 4:
+			printf("输入底数x ");
+			scanf_s("%d", &x);
+			printf("输入幂次方y ");
+			scanf_s("%d", &y);
 
-		Factorial(x, y);
+			Pow(x, y);
 
-		
-		break;
-	default:
-		printf("输入无效！\n");
-		break;
+
+			break;
+		case 5:
+			printf("输入需要阶乘的数字x ");
+			scanf_s("%d", &x);
+			printf("输入需要阶乘的项y ");
+			scanf_s("%d", &y);
+
+			Factorial(x, y);
+
+
+			break;
+		default:
+			printf("输入无效！\n");
+			break;
+		}
+
+		printf("\n输入1继续运行计算器，输入0退出计算器\n");
+		scanf_s("%d", &check);
+		if (check != 1)
+		{
+			break;
+		}
 	}
 
-	//printf("1.加减法\t2.乘除法\t3.开根号\n\t4.幂次方\t5.阶乘\n");
+	printf("谢谢游玩！");
+
+	
+
+	Case choice1 = f1;
+	Case choice2 = f2;
+
 
 
 	return 0;
@@ -129,14 +131,14 @@ void f2()
 		printf("输入两个数字x y\n");
 		scanf_s("%d", &x);
 		scanf_s("%d", &y);
-		Add(x, y);
+		Mul(x, y);
 	}
 	else if (choice == 2)
 	{
 		printf("输入两个数字x y\n");
 		scanf_s("%d", &x);
 		scanf_s("%d", &y);
-		Subtra(x, y);
+		Div(x, y);
 	}
 }
 
@@ -154,6 +156,11 @@ void Mul(int x, int y)
 }
 void Div(int x, int y)
 {
+	if (y == 0)
+	{
+		printf("错误：除数不能为零。\n");
+		return;
+	}
 	printf("\n%d除于%d等于%d", x, y, x/y);
 }
 
@@ -183,4 +190,5 @@ void Factorial(int x, int y)
 	printf("你输入的数字的%d项阶乘结果是%u", y, sum);
 
 }
+
 
