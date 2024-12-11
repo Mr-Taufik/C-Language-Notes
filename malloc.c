@@ -1,11 +1,12 @@
-这个代码解释了如何通过malloc去为数组分配内存
-假如我不知道一个数字有多少位，但是我想要一个数组将它的每一位都存储起来，这个时候我的array就需要通过malloc来分配内存大小
+//这个代码解释了如何通过malloc去为数组分配内存
+//假如我不知道一个数字有多少位，但是我想要一个数组将它的每一位都存储起来，这个时候我的array就需要通过malloc来分配内存大小
 
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main() 
+{
     long number;
     int count = 0;
 
@@ -15,12 +16,15 @@ int main() {
     long temp = number;
 
     // 处理数字为0的情况
-    if (temp == 0) {
+    if (temp == 0) 
+    {
         count = 1;
     }
-    else {
+    else 
+    {
         // 计算数字的位数
-        while (temp != 0) {
+        while (temp != 0) 
+        {
             temp /= 10;
             count++;
         }
@@ -28,18 +32,21 @@ int main() {
 
     // 动态分配数组   
     int* array = malloc(count * sizeof(int));
-    if (array == NULL) {
+    if (array == NULL) 
+    {
         printf("内存分配失败\n");
         return 1;
     }
 
     // 提取每一位数字并存储到数组中
     temp = number;
-    if (temp == 0) {
+    if (temp == 0) 
+    {
         array[0] = 0;
     }
     else {
-        for (int i = count - 1; i >= 0; i--) {
+        for (int i = count - 1; i >= 0; i--) 
+        {
             array[i] = temp % 10;
             temp /= 10;
         }
@@ -47,7 +54,8 @@ int main() {
 
     // 输出数组中的数字
     printf("数字的每一位是: ");
-    for (int i = 0; i < count; i++) {
+    for (int i = 0; i < count; i++) 
+    {
         printf("%d ", array[i]);
     }
     printf("\n");
