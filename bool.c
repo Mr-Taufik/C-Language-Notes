@@ -1,43 +1,45 @@
 //这个代码显示了布尔值的用法，主要用来熟悉bool在自定义函数里面的运用
-
+//这个代码呢用了bool值作为返回值根据 isPrime 函数的返回值，输出相应的消息
 
 #include <stdio.h>
 #include <stdbool.h>
 
-bool isPrime(int numbers);////该函数接受一个整数参数并且返回一个布尔值表示该数是不是质数
+bool isPrime(int number);//这里传入一个参数，然后isPrime这个函数会返回布尔值
+
 int main()
 {
-  setbuf(stdout, NULL);
-	int numbers;
-	printf("Enter a numbers: ");
-	scanf("%d", &numbers);
-	if (numbers <= 0)
-	{
-		printf("Enter a significnat numbers");
-		scanf("%d", &numbers);
-	}
-	if (isPrime(numbers))////这里调用了bool函数，bool函数会接受numbers并返回true or false
-	{
-		printf("This numbers is isPrime");
-	}
-	else
-	{
-		printf("This umbers is not isPrime");
-	}
+    setbuf(stdout, NULL);
+    int number;
+    do {
+        printf("Enter a positive integer greater than 1: ");
+        scanf_s("%d", &number);
+        if (number <= 1)
+        {
+            printf("Invalid input. Please enter a number greater than 1.\n");
+        }
+    } while (number <= 1);
+    
+    if (isPrime(number))//这里接收到函数的返回值，1为真就执行第一条语句，0为假就执行else语句
+    {
+        printf("%d is a prime number.\n", number);
+    }
+    else
+    {
+        printf("%d is not a prime number.\n", number);
+    }
 
-	return 0;
+    return 0;
 }
-bool isPrime(int numbers)
+
+bool isPrime(int number)
 {
-	for (int i = 2; i < numbers; i++)
-	{
-		if (numbers % i == 0)
-		{
-			return false;
-		}
-		else
-		{
-			return true;
-		}
-	}
+    if (number <= 1) return false;
+    for (int i = 2; i <= number / 2; i++)
+    {
+        if (number % i == 0)
+        {
+            return false;
+        }
+    }//只有在循环结束后确认没有任何因子时，才返回 true
+    return true;
 }
