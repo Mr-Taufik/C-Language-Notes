@@ -5,7 +5,8 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main() 
+{
 	int N;
 	double sum = 0.0;
 
@@ -14,14 +15,16 @@ int main() {
 	scanf("%d", &N);
 
 	// 检查输入是否有效
-	if (N <= 0) {
+	if (N <= 0) 
+	{
 		printf("输入无效，N 必须大于0。\n");
 		return 1; // 终止程序，返回错误状态
 	}
 
 	int i = 1; // 初始化控制变量
 
-	while (i <= N) { // 条件检查
+	while (i <= N) 
+	{ // 条件检查
 		sum += sqrt((double)i); // 计算平方根并累加
 		i++; // 更新控制变量
 	}
@@ -34,14 +37,17 @@ int main() {
 //////////////////////////
 #include <stdio.h>
 
-int main() {
+int main() 
+{
 	int count = 0;
 
-	while (1) { // 永远为真的条件
+	while (1) 
+	{ // 永远为真的条件
 		printf("这是一个无限循环，循环次数：%d\n", count);
 		count++;
 
-		if (count >= 10) { // 当计数达到10时，退出循环
+		if (count >= 10) 
+		{ // 当计数达到10时，退出循环
 			break;
 		}
 	}
@@ -54,17 +60,19 @@ int main() {
 
 #include <stdio.h>
 
-int main() {
+int main() 
+{
 	int number;
 
 	do {
 		printf("请输入一个正整数： ");
 		scanf("%d", &number);
 
-		if (number <= 0) {
+		if (number <= 0) 
+		{
 			printf("输入无效，请重新输入。\n");
 		}
-	} while (number <= 0); // 条件检查
+	  } while (number <= 0); // 条件检查
 
 	printf("您输入的正整数是： %d\n", number);
 
