@@ -27,7 +27,7 @@ int main() {
      printf("年龄: %d\n", ptr->age);
 
      // 修改结构体成员
-     ptr->age = 31;
+     ptr->age = 31;     //这里面会用到一个-> 这个就是用来指向结构体里面的元素，参与访问和修改
      printf("修改后的年龄: %d\n", person1.age);
 
      return 0;
