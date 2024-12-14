@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+// 递归实现二分查找
+int binary_search(int arr[], int left, int right, int target) {
+     if (left > right) {
+          return -1; // 未找到
+     }
+     int mid = left + (right - left) / 2;
+     if (arr[mid] == target) {
+          return mid;
+     }
+     if (arr[mid] > target) {
+          return binary_search(arr, left, mid - 1, target);
+     }
+     return binary_search(arr, mid + 1, right, target);
+}
+
+int main() {
+     int n, target;
+     printf("请输入数组的大小：");
+     scanf("%d", &n);
+     int arr[n];
+     printf("请输入有序数组的元素：\n");
+     for(int i = 0; i < n; i++) {
+          scanf("%d", &arr[i]);
+     }
+     printf("请输入要查找的目标值：");
+     scanf("%d", &target);
+
+     int result = binary_search(arr, 0, n - 1, target);
+     if (result != -1) {
+          printf("目标值 %d 在数组中的索引为 %d\n", target, result);
+     } else {
+          printf("目标值 %d 不在数组中。\n", target);
+     }
+
+     return 0;
+}
