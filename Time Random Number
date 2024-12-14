@@ -1,0 +1,26 @@
+////时间随机数生成
+
+#include <stdio.h>
+///下面这两个头是必须要的生成随机数
+//stdlib.h：包含rand()和srand()函数。
+//time.h：包含time()函数。
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+     // 设置随机数种子为当前时间
+     srand(time(NULL));
+
+     // 生成并打印10个随机数
+     for(int i = 0; i < 10; i++) {
+          int random_number = rand()%100; // 生成一个随机数
+         // 使用取模运算符%将随机数限制在0到99之间。
+          printf("随机数 %d: %d\n", i + 1, random_number);
+     }
+
+     // 生成一个范围在0到99之间的随机数
+     int random_between_0_and_99 = rand() % 100;
+     printf("0到99之间的随机数: %d\n", random_between_0_and_99);
+
+     return 0;
+}
