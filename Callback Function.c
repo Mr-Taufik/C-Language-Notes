@@ -87,3 +87,77 @@ int less(int x, int y)
           return 0;
      }
 }
+
+
+
+/////////////////////下面这里写个比较简便的
+#include <stdio.h>
+
+typedef int ( *T )( int, int );
+
+void sort( int *array, int length, T Compare );
+int great( int x, int y );
+int less( int x, int y );
+int main()
+{
+     int array[10];
+
+     for ( int i = 0; i < 10; i++ )
+     {
+          scanf_s( "%d", &array[i] );
+     }
+
+     sort( array, 10, great );
+
+     for ( int j = 0; j < 10; j++ )
+     {
+          printf( "%d ", array[j] );
+     }
+
+     sort( array, 10, less );
+     
+     for ( int j = 0; j < 10; j++ )
+     {
+          printf( "%d ", array[j] );
+     }
+
+
+     return 0;
+}
+void sort( int *array, int length, T Compare )
+{
+     for ( int i = 0; i < length - 1; i++ )
+     {
+          for ( int j = 0; j < length - 1 - i; j++ )
+          {
+               if ( Compare( array[j], array[j + 1] ) )
+               {
+                    int temp = array[j + 1];
+                    array[j + 1] = array[j];
+                    array[j] = temp;
+               }
+          }
+     }
+}
+int great( int x, int y )
+{
+     if ( x > y )
+     {
+          return 1;
+     }
+     else
+     {
+          return 0;
+     }
+}
+int less( int x, int y )
+{
+     if ( x < y )
+     {
+          return 1;
+     }
+     else
+     {
+          return 0;
+     }
+}
