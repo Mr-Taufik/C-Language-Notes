@@ -12,6 +12,17 @@ int less(int x, int y);
 
 void sort(int *array, int length, int (*p)(int, int));
 
+//void sort(int *array, int length, T compare)
+//这里还可以这样写，这里面的T compare本身就被简化了，不需要像上面那样去写；
+//没有typedef就要这样写void sort(int *array, int length, int (*compare)(int, int));
+//有了typedef就像下面这样写。
+//typedef int (*T)(int, int);
+//void sort(int *array, int length, T compare);
+
+
+
+
+
 //声明了一个sort函数，该函数用于对数组进行排序。它接受三个参数
 //int *array: 指向要排序的数组的指针。
 //int (*p)(int, int): 一个函数指针，指向用于比较数组元素的函数。
