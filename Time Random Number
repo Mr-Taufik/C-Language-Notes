@@ -10,11 +10,12 @@
 int main() {
      // 设置随机数种子为当前时间
      srand(time(NULL));
-
+///srand((unsigned int)time(NULL));这个是生成无符号型整数
      // 生成并打印10个随机数
      for(int i = 0; i < 10; i++) {
           int random_number = rand()%100; // 生成一个随机数
          // 使用取模运算符%将随机数限制在0到99之间。
+         //(rand() % 6) + 1;这里的随机数是1到6
           printf("随机数 %d: %d\n", i + 1, random_number);
      }
 
