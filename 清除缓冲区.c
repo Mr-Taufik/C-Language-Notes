@@ -69,6 +69,56 @@ int main()
 ///////clear_input_buffer 函数通过循环读取并丢弃所有字符，直到遇到换行符 \n 或文件结束符 EOF。
 在 scanf 之后调用 clear_input_buffer，以清除输入缓冲区中残留的 \n。
 
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+     char name[10];
+
+     fgets(name, sizeof(name), stdin);
+     printf("%s", name);
+     name[strcspn(name, "\n")] = '\0';
+     return 0;
+}
+//这个方法用于清理已经读取的字符串中的换行符（\n）。
+strcspn函数会返回字符串name中第一个出现\n的位置的索引。
+然后将该位置的字符替换为字符串结束符\0，有效地移除了换行符。
+使用场景：
+
+通常在使用fgets读取输入后使用。fgets会将输入的换行符也包含在读取的字符串中，
+这可能不需要或不希望保留。因此，通过这种方式可以去除末尾的换行符。
+
+#include <stdio.h>
+
+// 函数声明
+void clear_input_buffer(void);
+
+// 函数定义
+void clear_input_buffer(void) 
+{
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) {
+        // 继续读取并忽略剩余的字符
+    }
+}
+
+int main() {
+    char name[100];
+    
+    printf("请输入你的名字: ");
+    if (fgets(name, sizeof(name), stdin)) {
+        // 移除换行符
+        name[strcspn(name, "\n")] = '\0';
+    }
+
+    // 清理输入缓冲区，确保没有残留的输入
+    clear_input_buffer();
+
+    printf("你好, %s!\n", name);
+    
+    return 0;
+}
 
 
 
