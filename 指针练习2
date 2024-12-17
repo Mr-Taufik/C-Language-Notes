@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    int array[10] = {0};  // 初始化数组为 0
+    int *ptr = array;      // 指针 ptr 指向数组 array
+
+    // 使用 scanf 输入数组元素
+    for (int i = 0; i < 10; i++) 
+    {
+        printf("请输入第 %d 个数字: ", i + 1);
+        scanf("%d", &array[i]);  // 使用标准的 scanf 格式
+    }
+
+    // 使用 ptr 输出数组元素
+    printf("数组元素为: ");
+    for (int j = 0; j < 10; j++) 
+    {
+        printf("%d ", ptr[j]);  // 通过 ptr 访问数组元素
+    }
+    printf("\n");
+
+    return 0;
+}
