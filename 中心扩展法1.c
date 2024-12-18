@@ -73,3 +73,18 @@ int main() {
 
     return 0;
 }
+
+
+expand_from_center 函数：
+
+参数：字符串 str，中心的左右指针 left 和 right。
+功能：从给定的中心向两侧扩展，比较字符是否相同，直到无法扩展为止。
+返回值：找到的回文串的长度。
+longest_palindromic_substring 函数：
+
+参数：输入字符串 str，用于存储结果的 result 数组。
+功能：
+遍历字符串中的每个字符，分别考虑奇数和偶数长度的回文。
+使用 expand_from_center 函数计算以当前字符为中心的回文长度。
+更新记录最长回文串的起始和结束位置。
+最终提取并返回最长的回文子串。
